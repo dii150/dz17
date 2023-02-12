@@ -1,0 +1,467 @@
+@use "variables";
+
+
+.header {
+  height: 10vh;
+}
+
+.section-hero {
+  margin-bottom: 70px;
+  background: url("../images/bg-mobile.jpg") no-repeat;
+  background-size: cover;
+  width: 100%;
+  min-height: 90vh;
+  padding-top: 70px;
+
+  @media screen and (min-width: 768px) {
+    background: url("../images/bg-tablet.jpg") no-repeat;
+    background-size: cover;
+    width: 100%;
+    padding-top: 30px;
+    min-height: 320px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    background: url("../images/bg-desktop.jpg") no-repeat;
+    background-size: cover;
+    width: 100%;
+    padding-top: 100px;
+    min-height: 90vh;
+  }
+
+  &__title {
+    font: 30px / 50px variables.$mainFontSemiBold;
+    letter-spacing: 0.05em;
+
+    @media screen and (min-width: 768px) {
+      font-size: 36px;
+    }
+
+    @media screen and (min-width: 1280px) {
+      font-size: 48px;
+      width: 80%;
+    }
+  }
+}
+
+.latest-wrapper {
+  @media screen and (min-width: 1280px) {
+    display: flex;
+    gap: 20px;
+
+    .latest__item {
+      display: block;
+      width: 100%;
+    }
+  }
+}
+
+.big-title {
+  font: 48px / 64px variables.$mainFontRegular;
+  width: fit-content;
+  margin: 0 auto 50px;
+
+  @media screen and (min-width: 768px) {
+    margin: 0;
+  }
+}
+
+.section {
+  margin-bottom: 70px;
+}
+
+
+
+.blog__item {
+
+  &_tag {
+    margin-bottom: 30px;
+  }
+
+  &_title {
+    margin-bottom: 10px;
+  }
+
+  &_date {
+    margin-bottom: 40px;
+  }
+
+  &_description {
+    margin-bottom: 37px;
+  }
+
+  &_img {
+    img {
+      width: 100%;
+    }
+  }
+
+  &:not(:last-child) {
+    margin-bottom: 50px;
+  }
+
+
+  @media screen and (min-width: 768px) {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+          "img tag"
+          "img title"
+          "img date"
+          "img description";
+
+    &_tag {
+      grid-area: tag;
+      margin: 0;
+    }
+
+    &_title {
+      grid-area: title;
+      margin: 0;
+    }
+
+    &_date {
+      grid-area: date;
+      margin: 0;
+    }
+
+    &_description {
+      grid-area: description;
+      margin: 0;
+    }
+
+    &_img {
+      grid-area: img;
+      img {
+
+        margin: 0;
+      }
+    }
+
+  }
+
+}
+
+.postSecond {
+  grid-template-areas:
+          "tag img"
+          "title img"
+          "date img"
+          "description img";
+}
+
+
+
+
+.view-all {
+  display: flex;
+  gap: 20px;
+  &::after {
+    content: url("../images/arrow.png");
+  }
+}
+
+.heading {
+  margin-bottom: 30px;
+
+  @media screen and (min-width: 768px) {
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .medium-title {
+    margin-bottom: 10px;
+  }
+
+}
+
+.latest__item {
+  &_img {
+    img {
+      margin-bottom: 25px;
+    }
+  }
+
+  &_heading {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 25px;
+  }
+
+  &_description {
+    .title {
+      margin-bottom: 20px;
+    }
+  }
+
+  &:not(:last-child) {
+    margin-bottom: 50px;
+  }
+
+
+
+  @media screen and (min-width: 768px) {
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+    grid-template-areas:
+        "img heading"
+        "img description";
+    &_img {
+      grid-area: img;
+      img {
+        margin: 0;
+      }
+    }
+
+    &_heading {
+      margin: 0;
+      grid-area: heading;
+    }
+
+    &_description {
+      grid-area: description;
+      .title {
+        margin-bottom: 20px;
+      }
+    }
+
+    &_tag {
+      font-size: 12px;
+    }
+
+    &_date {
+      font-size: 12px;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 50px;
+    }
+  }
+
+}
+
+.postFourth {
+  grid-template-areas:
+        "heading img"
+        "description img";
+}
+
+
+
+.popular__item {
+  &_img {
+    img {
+      margin-bottom: 20px;
+    }
+  }
+
+  &_heading {
+    margin-bottom: 11px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &_title {
+    margin-bottom: 10px;
+  }
+
+  &:not(:last-child) {
+    margin-bottom: 50px;
+  }
+
+  &_description {
+    margin-bottom: 50px;
+  }
+
+  &_btn {
+    margin: 0 auto;
+    max-width: 180px;
+    width: 100%;
+    height: 46px;
+
+    button {
+      background: $secondarySubColor;
+      color: white;
+      font: 16px / 1.6 variables.$subFont;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    width: 45%;
+
+    &_tag {
+      font-size: 12px;
+    }
+
+    &_date {
+      font-size: 12px;
+    }
+  }
+
+}
+
+@media screen and (min-width: 768px) {
+  .wrapper {
+    display: flex;
+    justify-content: space-around;
+  }
+}
+
+.info-container {
+  @media screen and (min-width: 1280px) {
+    display: flex;
+    justify-content: space-between;
+
+    .info-wrapper {
+      height: 100%;
+      max-width: 470px;
+      width: 100%;
+    }
+  }
+}
+
+.info-title {
+  font: 24px / 40px variables.$mainFontRegular;
+
+  &_svg {
+    margin-top: 15px;
+  }
+
+  @media screen and (min-width: 768px) {
+    max-width: 700px;
+    width: 100%;
+    font-size: 23px;
+  }
+}
+
+.section-info svg {
+  margin-bottom: 35px;
+}
+
+.info-text {
+  font: 18px / 40px variables.$subFont;
+  color: $secondarySubColor;
+  letter-spacing: 0.05em;
+
+  @media screen and (min-width: 768px) {
+    width: 100%;
+    padding-left: 20%;
+    text-align: right;
+    font-size: 19px;
+  }
+
+  &:not(:last-child) {
+    margin-bottom: 15px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    text-align: justify;
+  }
+}
+
+.footer {
+  background: rgba(244, 244, 244, 1);
+  padding: 50px 0;
+  text-align: center;
+}
+
+.footer__item, .footer-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  &_header {
+    font: 24px / 40px variables.$mainFontRegular;
+    margin-bottom: 20px;
+
+
+    @media screen and (min-width: 768px) {
+      font-size: 48px;
+    }
+
+  }
+
+  .contacts {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 40px;
+
+    @media screen and (min-width: 1280px) {
+      align-items: start;
+    }
+
+
+  }
+
+  a {
+    font: 18px / 30px variables.$subFont;
+    display: block;
+  }
+
+  &_media {
+    display: flex;
+    gap: 5px;
+    justify-content: space-between;
+    margin-bottom: 40px;
+
+    @media screen and (min-width: 768px) {
+      max-width: 270px;
+    }
+  }
+
+  &_info {
+    font: 16px / 27px variables.$subFont;
+    letter-spacing: 0.1em;
+
+    @media screen and (min-width: 768px) {
+      font-size: 12px;
+    }
+  }
+
+}
+
+.footer-wrapper {
+  @media screen and (min-width: 1280px) {
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+}
+
+
+
+.rect {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  border: 1px solid variables.$secondarySubColor;
+
+  &:hover {
+    background: variables.$secondarySubColor;
+    svg {
+      fill: white;
+    }
+  }
+
+  svg {
+    fill: $secondarySubColor;
+  }
+}
+
+
+
+
+

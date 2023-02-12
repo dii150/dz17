@@ -1,0 +1,62 @@
+@use "variables";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: currentColor;
+}
+
+.container {
+  padding: 0 10px;
+
+  @media screen and (min-width: 768px){
+    padding: 0 34px;
+  }
+
+  @media screen and (min-width: 1280px){
+    padding: 0 135px;
+  }
+}
+
+.tag {
+  font: 16px / 1.6 variables.$subFont;
+  color: $subColor;
+}
+
+.title {
+  font: 22px / 1.6 variables.$mainFontMedium;
+}
+
+.date {
+  font: 16px / 1.6 variables.$subFont;
+  color: $subColor;
+}
+
+.description-text {
+  color: $secondarySubColor;
+  font: 16px / 1.6 variables.$subFont;
+  letter-spacing: 0.05em;
+}
+
+img {
+  width: 100%;
+}
+
+.medium-title {
+  font: 28px / 36px variables.$mainFontSemiBold;
+}
+
+.view-all {
+  color: $secondarySubColor;
+  font: 16px / 1.6 variables.$subFont;
+  letter-spacing: 0.1em;
+}
